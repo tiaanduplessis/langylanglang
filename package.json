@@ -1,6 +1,6 @@
 {
   "name": "langylanglang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Localize your interface",
   "main": "dist/langylanglang.js",
   "umd:main": "dist/langylanglang.umd.js",
@@ -27,7 +27,9 @@
   },
   "standard": {
     "parser": "babel-eslint",
-    "ignore": ["dist"],
+    "ignore": [
+      "dist"
+    ],
     "env": {
       "jest": true
     }
