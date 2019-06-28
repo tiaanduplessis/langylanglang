@@ -1,6 +1,6 @@
 {
   "name": "langylanglang",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Localize your interface",
   "main": "dist/langylanglang.js",
   "umd:main": "dist/langylanglang.umd.js",
