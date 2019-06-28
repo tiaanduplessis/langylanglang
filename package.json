@@ -19,7 +19,7 @@
     "dev": "microbundle watch"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.3.4",
+    "@babel/preset-env": "7.4.5",
     "babel-eslint": "10.0.1",
     "jest": "24.1.0",
     "microbundle": "0.10.1",
