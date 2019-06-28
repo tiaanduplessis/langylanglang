@@ -1,12 +1,14 @@
+
+import { isFunc, isObj } from './utils'
+
+const MATCH_PATTERN = /{([a-zA-Z_-]+)}/g
+
 let activeLocale = 'en'
 let activeFallback = ''
 let handleMissingKey
 let locales = new Map()
 
 locales.set(activeLocale, {})
-
-const isObj = obj => typeof obj === 'function' || (typeof obj === 'object' && !!obj)
-const isFunc = func => func && typeof func === 'function'
 
 export function locale (newLocale) {
   activeLocale = newLocale
@@ -28,9 +30,9 @@ export function set (locale, translations = {}) {
 }
 
 export function t (key, props = {}, lang) {
-  const str = locales.get(lang || activeLocale || fallback)[key]
+  const str = locales.get(lang || activeLocale || activeFallback)[key]
 
-  return str.replace(/{([a-zA-Z_-]+)}/g, (_, key) => {
+  return str.replace(MATCH_PATTERN, (_, key) => {
     if (!props[key]) {
       return handleMissingKey ? handleMissingKey(key, props, str) : ''
     }
